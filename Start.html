@@ -6,22 +6,29 @@
     <link rel="stylesheet" type="text/css" href="main.css" media="”screen”" />
   </head>
   <body>
-    <button type="button" onclick="document.location='index.html'">
-        Back
-    </button>
-    
+    <button type="button" onclick="document.location='index.html'">Back</button>
+
     <button type="button" onclick="document.location='heartbeatHowTo.html'">
-        Help
+      Help
     </button>
     <h1>Generate Your Playlist!</h1>
     <h2>
-        Enter your heartbeat:
+      Enter your heartbeat. <br />
+      This is the value calculated on the previous page using the 15 second
+      timer.
     </h2>
+
+    <form<label for="Heartbeat">Heartbeat (BPM):</label>
+    <input type="number" id="Heartbeat" name="Heartbeat" , placeholder="BPM", min="1", max="199"/>
+
+    <p>Note: This value must be a wholee number, at least two digits, no more than three.</p>
+
+    <input type="submit" value="Submit"> </form>
+
+
     <button type="button" onclick="document.location='skipBPM.html'">
-        Skip
+      Skip
     </button>
-    <button type="button" onclick="document.location='Mood.html'">
-        Next
-    </button>
+    <button type="button" onclick="document.location='Mood.html'">Next</button>
   </body>
 </html>
