@@ -10,9 +10,15 @@
         <button type="button" onclick="document.location='CalcBP.html'">
             Back
         </button>
-        <h1>Estimated BPM</h1>
+        <h1>Enter your Estimated BPM. </h1>
         <p>
-          [insert text box to get an estimated bpm]
+            <form<label for="Heartbeat">Heartbeat (BPM):</label>
+            <input type="number" id="Heartbeat" name="Heartbeat" , placeholder="BPM", min="40", max="200"/>
+        
+            <p>Note: This value must be a wholee number, at least two digits, no more than three.</p>
+        
+            <input type="submit" value="Submit"> </form>
+        
         </p>
         <button type="button" onclick="document.location='Mood.html'">
             Next
