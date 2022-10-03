@@ -41,10 +41,13 @@
         }
 
       function myfunc() {
-                    var input = document.getElementById('Heartbeat');
-                    alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
+            var input = document.getElementById('Heartbeat');
+            var hbp = document.getElementById("Heartbeat").value;
+                if (!isNaN(hbp) & hbp > 20 & hbp < 200) {
+                  alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.")
                 }
-            document.write(input);
+      }
+      document.write(input);
 
 
 
@@ -76,7 +79,7 @@
 
 
     <form<label for="Heartbeat">Heartbeat (BPM):</label>
-    <input type="number" id="Heartbeat" name="Heartbeat" , placeholder="", min="20", max="200" step=1/>
+    <input type="number" id="Heartbeat" name="Heartbeat" placeholder="" min="20" max="200" step=1/>
 
     <input type="submit" value="Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc(); check(); submitResetIfNeeded()"> </form> <br> <br>
 
