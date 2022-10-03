@@ -16,9 +16,9 @@
         <h1>Step 2: Your Mood</h1>
         <h2>Pick your current mood</h2>
         <p>
-            <form<label for="Mood">Choose the best descriptor of your mood:</label>
+            <form<label for="Mood"> Choose the best descriptor of your mood:</label>
 
-            <select name="Mood" id="Mood">
+            <select name="Mood" id="Mood" value="">  <option></option>
               <option value="calm">Calm</option>
               <option value="happy">Happy</option>
               <option value="silly">Silly</option>
@@ -39,7 +39,7 @@
             <input type="submit" value="Submit" onclick="myfunc()";> </form>
 
 
-            
+
             <script type="text/javascript">
                 function myfunc() {
                     var input = document.getElementById('Mood');
@@ -48,13 +48,26 @@
 
 
             document.write(input)
+
+
+
+            function manage(Mood) {
+                var bt = document.getElementById('btnNext');
+                if (Mood.value != '') {
+                    btnNext.disabled = false;
+                }
+                else {
+                    btnNext.disabled = false;
+                }
+            }
+
             </script>
 
 
 
+
         </p>
-        <button type="button" onclick="document.location='PlaylistBuildInProgress.html'">
-            Next
+        <button id = "btnNext" type="button" onclick="document.location='PlaylistBuildInProgress.html'">Next
         </button>
     </body>
 </html>
