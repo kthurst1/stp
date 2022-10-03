@@ -25,7 +25,15 @@
         }
 
         function revFunction() {
-            document.getElementById("btnNext").disabled = false;
+            var hbp = document.getElementById("Heartbeat").value;
+            if (isNaN(hbp) || hbp < 20 || hbp > 200) {
+              document.getElementById("btnNext").disabled = true;
+            }
+            else {
+              document.getElementById("btnNext").disabled = false;
+            }
+            
+            //document.getElementById("btnNext").disabled = false;
         }
 
         function relFunction() {
@@ -37,6 +45,26 @@
                     alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
                 }
             document.write(input);
+
+
+
+      function check() { //https://stackoverflow.com/questions/66946834/show-error-alert-if-value-is-outside-range-on-button-press
+
+        var hbp = document.getElementById("Heartbeat").value;
+        if (isNaN(hbp) || hbp < 20 || hbp > 200) {
+          alert("Invalid Entry.  Please Enter a valid beartbeat, between 20 and 200 beats per minute.")
+          alert("Please press Reset.")
+        } else {
+          //do nothing
+        } 
+      }
+
+      function submitResetIfNeeded() {
+        var hbp = document.getElementById("Heartbeat").value;
+        if (isNaN(hbp) || hbp < 20 || hbp > 200) {
+          Submit.setAttribute("disabled", true);
+        }
+      }
       
     </script>
 
@@ -48,15 +76,16 @@
 
 
     <form<label for="Heartbeat">Heartbeat (BPM):</label>
-    <input type="number" id="Heartbeat" name="Heartbeat" , placeholder="", min="20", max="150" step=1/>
+    <input type="number" id="Heartbeat" name="Heartbeat" , placeholder="", min="20", max="200" step=1/>
 
-    <input type="submit" value="Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc()"> </form> <br> <br>
+    <input type="submit" value="Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc(); check(); submitResetIfNeeded()"> </form> <br> <br>
 
 
     <button type="button" onclick="document.location='skipBPM.html'">
       Skip
     </button>
-    <button disabled id = "btnNext" type="button" onclick="document.location='Mood.html'">Next</button>
+
+    <button id = "btnNext" type="button" onclick="document.location='Mood.html'", disabled>Next</button>
     <button id = "relbtn" type="button" onclick="relFunction()">Reset
     </button>
   </body>
