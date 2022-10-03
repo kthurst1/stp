@@ -21,19 +21,37 @@
         Normal--> You are doing normal activity feeling average <br>
         High --> You are stressed, maybe upset, exercising perhaps <br>
         <p>
-            <form<label for="Mood">Choose the best descriptor of your mood:</label>
 
-            <select name="Mood" id="Mood">
+
+        <script type="text/javascript">
+            //https://stackoverflow.com/questions/51428556/how-can-i-disable-an-html-button-until-another-button-is-clicked#:~:text=You%20can%20just%20add%20%22disabled,them%20all%20in%20one%20place.
+            function btnFunction() {
+                document.getElementById("Mood").readOnly = true;
+            }
+          
+            function revFunction() {
+                document.getElementById("btnNext").disabled = false;
+            }
+          
+            function relFunction() {
+                location.reload();
+            }
+            </script>
+        
+
+            <form<label for="Mood">Choose the best descriptor of your mood:</label>
+            <select name="Mood" id="Mood" value = ""> <option></option>
               <option value="low">Low</option>
               <option value="normal">Normal</option>
               <option value="high">High</option>
             </select>
+            <input type="submit" value="Submit" onclick="btnFunction();revFunction()"> 
+            </form>
 
 
-            <input type="submit" value="Submit"> </form>
         </p>
 
-        <button type="button" onclick="document.location='Mood.html'">
+        <button disabled id = "btnNext" type="button" onclick="document.location='Mood.html'">
             Next
         </button>
     </body>
