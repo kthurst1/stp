@@ -18,17 +18,33 @@
       timer.
     </h2>
 
+    <script type="text/javascript">
+      //https://stackoverflow.com/questions/51428556/how-can-i-disable-an-html-button-until-another-button-is-clicked#:~:text=You%20can%20just%20add%20%22disabled,them%20all%20in%20one%20place.
+      function btnFunction() {
+          document.getElementById("Heartbeat").readOnly = true;
+      }
+
+      function revFunction() {
+          document.getElementById("btnNext").disabled = false;
+      }
+
+      function relFunction() {
+          location.reload();
+      }
+      </script>
+
+
     <p>Note: This value must be a wholee number, at least two digits, no more than three.</p>
 
     <form<label for="Heartbeat">Heartbeat (BPM):</label>
     <input type="number" id="Heartbeat" name="Heartbeat" , placeholder="BPM", min="40", max="200"/>
 
-    <input type="submit" value="Submit"> </form> <br> <br>
+    <input type="submit" value="Submit" onclick="btnFunction();revFunction()";> </form> <br> <br>
 
 
     <button type="button" onclick="document.location='skipBPM.html'">
       Skip
     </button>
-    <button type="button" onclick="document.location='Mood.html'">Next</button>
+    <button disabled id = "btnNext" type="button" onclick="document.location='Mood.html'">Next</button>
   </body>
 </html>
