@@ -36,7 +36,22 @@
               <option value="hurt">Hurt</option>
               <option value="hot">Hot</option>
             </select>
-            <input type="submit" value="Submit"> </form>
+            <input type="submit" value="Submit" onclick="myfunc()";> </form>
+
+
+            
+            <script type="text/javascript">
+                function myfunc() {
+                    var input = document.getElementById('Mood');
+                    alert(input.value);
+                } 
+
+
+            document.write(input)
+            </script>
+
+
+
         </p>
         <button type="button" onclick="document.location='PlaylistBuildInProgress.html'">
             Next
