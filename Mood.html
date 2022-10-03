@@ -30,6 +30,12 @@
             function relFunction() {
                 location.reload();
             }
+
+            function myfunc() {
+                    var input = document.getElementById('Mood');
+                    alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
+                }
+            document.write(input);
             </script>
 
 
@@ -53,7 +59,7 @@
               <option value="hurt">Hurt</option>
               <option value="hot">Hot</option>
             </select>
-            <input type="submit" value="Submit" onclick="btnFunction();revFunction()";> </form>
+            <input type="submit" value="Submit" onclick="btnFunction();revFunction(); myfunc()";> </form>
 
 
 

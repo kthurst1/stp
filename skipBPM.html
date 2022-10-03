@@ -26,7 +26,7 @@
         <script type="text/javascript">
             //https://stackoverflow.com/questions/51428556/how-can-i-disable-an-html-button-until-another-button-is-clicked#:~:text=You%20can%20just%20add%20%22disabled,them%20all%20in%20one%20place.
             function btnFunction() {
-                document.getElementById("Mood").readOnly = true;
+                document.getElementById("HR").readOnly = true;
             }
           
             function revFunction() {
@@ -36,16 +36,22 @@
             function relFunction() {
                 location.reload();
             }
+
+            function myfunc() {
+                    var input = document.getElementById('HR');
+                    alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
+                }
+            document.write(input);
             </script>
         
 
-            <form<label for="Mood">Choose the best descriptor of your mood:</label>
-            <select name="Mood" id="Mood" value = ""> <option></option>
+            <form<label for="Heart Rate">Choose the best descriptor of your Heart Rate right now:</label>
+            <select name="HR" id="HR" value = ""> <option></option>
               <option value="low">Low</option>
               <option value="normal">Normal</option>
               <option value="high">High</option>
             </select>
-            <input type="submit" value="Submit" onclick="btnFunction();revFunction()"> 
+            <input type="submit" value="Submit" onclick="btnFunction();revFunction(); myfunc()"> 
             </form>
 
 

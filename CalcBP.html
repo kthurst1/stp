@@ -20,26 +20,37 @@
 
     <script type="text/javascript">
       //https://stackoverflow.com/questions/51428556/how-can-i-disable-an-html-button-until-another-button-is-clicked#:~:text=You%20can%20just%20add%20%22disabled,them%20all%20in%20one%20place.
-      function btnFunction() {
-          document.getElementById("Heartbeat").readOnly = true;
-      }
+        function btnFunction() {
+            document.getElementById("Heartbeat").readOnly = true;
+        }
 
-      function revFunction() {
-          document.getElementById("btnNext").disabled = false;
-      }
+        function revFunction() {
+            document.getElementById("btnNext").disabled = false;
+        }
 
-      function relFunction() {
-          location.reload();
-      }
-      </script>
+        function relFunction() {
+            location.reload();
+        }
+
+      function myfunc() {
+                    var input = document.getElementById('Heartbeat');
+                    alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
+                }
+            document.write(input);
+      
+    </script>
 
 
-    <p>Note: This value must be a wholee number, at least two digits, no more than three.</p>
+    <p>Note: This value must be a whole number, at least two digits, no more than three.
+    </p>
+
+    <p class = "output" id = "output1"></p>
+
 
     <form<label for="Heartbeat">Heartbeat (BPM):</label>
     <input type="number" id="Heartbeat" name="Heartbeat" , placeholder="", min="20", max="150" step=1/>
 
-    <input type="submit" value="Submit" onclick="btnFunction();revFunction()";> </form> <br> <br>
+    <input type="submit" value="Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc()"> </form> <br> <br>
 
 
     <button type="button" onclick="document.location='skipBPM.html'">
