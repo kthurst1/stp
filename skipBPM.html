@@ -30,7 +30,13 @@
             }
           
             function revFunction() {
-                document.getElementById("btnNext").disabled = false;
+                var hbpCat = document.getElementById("HR").innerHTML;
+                if (hbpCat.length === 0) {
+                    document.getElementById("btnNext").disabled = true;
+                }
+                else {
+                    document.getElementById("btnNext").disabled = false;
+                }
             }
           
             function relFunction() {
@@ -39,25 +45,49 @@
 
             function myfunc() {
                     var input = document.getElementById('HR');
-                    alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
+                    var hbp = document.getElementById('HR').value;
+                    if(hbp) {
+                    alert("You Entered: " + input.innerHTML + ". Is this Correct? If not, Reset and try again.");
+                    }
                 }
             document.write(input);
-            </script>
+
+
+            function check() { //https://stackoverflow.com/questions/66946834/show-error-alert-if-value-is-outside-range-on-button-press
+
+                var hbp = document.getElementById('HR').value;
+                if (!hbp) {
+                    alert("Invalid Entry.  Please Enter a valid heart beat from the list.")
+                    alert("Please press Reset.")
+                } else {
+                //do nothing
+                } 
+            }
+
+            function submitResetIfNeeded() {
+                var hbp = document.getElementById('HR').value;
+                if (!hbp) {
+                    Submit.setAttribute("disabled", true);
+                }
+            }
+
+        </script>
         
 
-            <form<label for="Heart Rate">Choose the best descriptor of your Heart Rate right now:</label>
-            <select name="HR" id="HR" value = ""> <option></option>
-              <option value="low">Low</option>
-              <option value="normal">Normal</option>
-              <option value="high">High</option>
-            </select>
-            <input type="submit" value="Submit" onclick="btnFunction();revFunction(); myfunc()"> 
-            </form>
 
+        <form for="HeartRate"> <label for="HeartRate">Choose the best description of your HeartRate:</label>
+            <select name="HR" id="HR" value = ""> <option></option>
+                <option value="low">Low</option>
+                <option value="normal">Normal</option>
+                <option value="high">High</option>
+            </select>
+    
+            <input type="submit" value= "Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc(); check(); submitResetIfNeeded()"> 
+        </form>
 
         </p>
 
-        <button disabled id = "btnNext" type="button" onclick="document.location='Mood.html'">
+        <button id = "btnNext" type="button" onclick="document.location='Mood.html'" disabled>
             Next
         </button>
         <button id = "relbtn" type="button" onclick="relFunction()">Reset
