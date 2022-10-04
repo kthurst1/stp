@@ -28,72 +28,40 @@
             function btnFunction() {
                 document.getElementById("HR").readOnly = true;
             }
-          
-            const btn = document.getElementById("btnNext") as HTMLButtonElement | null;
 
             function revFunction() {
-                var hbpCat = document.getElementById("HR").value;
-                if (hbpCat === "Low" || hbpCat === "Normal" || hbpCat === "High") {
-                    document.getElementById("btn").disabled = false;
-                }
-                else {
-                    //do nothing
-                }
+                document.getElementById("btnNext").disabled = false;
             }
-          
+
             function relFunction() {
                 location.reload();
             }
 
             function myfunc() {
                     var input = document.getElementById('HR');
-                    var hbp = document.getElementById('HR').value;
-                    if(hbp != "") {
                     alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
-                    }
                 }
-            document.write(input);
-
-
-            function check() { //https://stackoverflow.com/questions/66946834/show-error-alert-if-value-is-outside-range-on-button-press
-
-                var hbp = document.getElementById('HR').value;
-                if (hbp === "") {
-                    alert("Invalid Entry.  Please Enter a valid heart beat from the list.")
-                    alert("Please press Reset.")
-                } else {
-                //do nothing
-                } 
-            }
-
-            function submitResetIfNeeded() {
-                var hbp = document.getElementById('HR').value;
-                if (hbp === "") {
-                    Submit.setAttribute("disabled", true);
-                }
-            }
-
-
-            
-
+                document.write(input);
 
         </script>
         
 
 
         <form for="HeartRate"> <label for="HeartRate">Choose the best description of your HeartRate:</label>
-            <select name="HR" id="HR" value = ""> <option></option>
-                <option value="low">Low</option>
-                <option value="normal">Normal</option>
-                <option value="high">High</option>
+            <select name="HR" id="HR" value = "" placeholder = ""> 
+                <option value = "default" selected disabled>Select an Option</option>
+                <option value="Low">Low</option>
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
             </select>
-    
-            <input type="submit" value= "Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc(); check(); submitResetIfNeeded()"> 
+
+            <input type="button" value= "Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc()"> 
         </form>
+        
 
         </p>
 
-        <button id = "btnNext" type="button" onclick="document.location='Mood.html'" disabled>
+        <button disabled id = "btnNext" type="button" onclick="document.location='Mood.html'" >
             Next
         </button>
         <button id = "relbtn" type="button" onclick="relFunction()">Reset
