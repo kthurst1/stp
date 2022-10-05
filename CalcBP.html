@@ -83,6 +83,18 @@
 
     <input type="submit" value="Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc(); check(); submitResetIfNeeded()"> </form> <br> <br>
 
+    <script>
+      var calcbpsel = sessionStorage.getItem('calcbpselection');
+
+      var skipbpmselection = sessionStorage.getItem("Heartbeat");
+      document.write("Your Last Selection: " + calcbpsel);
+
+    </script>
+
+      <br>
+      <br>
+
+
 
     <button type="button" onclick="document.location='skipBPM.html'">
       Skip
