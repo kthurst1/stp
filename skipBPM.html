@@ -40,8 +40,11 @@
             function myfunc() {
                     var input = document.getElementById('HR');
                     alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
+                    
+                // 
+                    sessionStorage.setItem("skipBPMFixed", document.getElementById('HR').value);
                 }
-                document.write(input);
+
 
         </script>
         
@@ -62,10 +65,7 @@
 
         <script>
 
-            sessionStorage.setItem("skipbpmselection", document.getElementById('HeartRate'));
-
-            var skipbpmselection = document.getElementById('HeartRate');
-            sessionStorage.setItem("skipbpmselection", skipbpmselection);
+            document.write("test answer: ", sessionStorage.getItem("skipBPMFixed"));
 
         </script>
         

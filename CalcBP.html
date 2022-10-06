@@ -43,10 +43,13 @@
       function myfunc() {
             var input = document.getElementById('Heartbeat');
             var hbp = document.getElementById("Heartbeat").value;
-                if (!isNaN(hbp) & hbp > 19 & hbp < 201) {
-                  alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.")
-                }
+              if (!isNaN(hbp) & hbp > 19 & hbp < 201) {
+                alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.")
+              }
 
+              // sets input as calcBPFixed in sessionStorage
+              sessionStorage.setItem("calcBPFixed", document.getElementById("Heartbeat").value);
+              
              // sessionStorage.setItem("calcbpfixed", hbp);
               //var calcbpfixed = input;
               //sessionStorage.setItem("calcbpfixed", calcbpfixed); 
@@ -87,7 +90,9 @@
     <input type="submit" value="Submit" id = "Submit" onclick="btnFunction();revFunction(); myfunc(); check(); submitResetIfNeeded()"> </form> <br> <br>
 
     <script>
-      
+
+      document.write("test answer: ", sessionStorage.getItem("calcBPFixed"));
+
       //page 1
       //sessionStorage.setItem("favoriteMovie", "Shrek");
 
