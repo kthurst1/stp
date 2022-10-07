@@ -1,11 +1,7 @@
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyC17ZK7zVyj0BrG7f3jk7fTPrGxMKwgraw",
   authDomain: "stpcomp225project.firebaseapp.com",
@@ -16,6 +12,23 @@ const firebaseConfig = {
   measurementId: "G-VX71CP1G4X"
 };
 
-// Initialize Firebase
+// init app
 const app = initializeApp(firebaseConfig);
+
+// init services
 const analytics = getAnalytics(app);
+const db = getFirestore();
+
+// collection ref
+const colRef = collection(db, 'spotifydata');
+
+// get collection data
+getDocs(colRef).then((snapshot) => {
+  let spotifydata = [];
+  snapshot.docs.forEach((doc) => {
+    spotifydata.push({ ...doc.data(), id: doc.id });
+  })
+})
+.catch(err => {
+  console.log(err.message);
+});
