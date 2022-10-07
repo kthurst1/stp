@@ -24,6 +24,7 @@ const colRef = collection(db, 'spotifydata');
 
 // get collection data
 getDocs(colRef).then((snapshot) => {
+  console.log(snapshot);
   let spotifydata = [];
   snapshot.docs.forEach((doc) => {
     spotifydata.push({ ...doc.data(), id: doc.id });
