@@ -36,14 +36,6 @@
                     alert("You Entered: " + input.value + ". Is this Correct? If not, Reset and try again.");
                     sessionStorage.setItem("moodFixed", document.getElementById("Mood").value);
                 }
-            document.write(input);
-
-
-            //var calcbpfixed = sessionStorage.getItem('calcbpfixed');
-            //var calcbpfixed = sessionStorage.getItem("calcbpfixed");
-           // document.write(calcbpfixed); 
-
-
 
             </script>
 
@@ -77,23 +69,11 @@
 
             <script>
 
-            //var skipbpmselection = sessionStorage.getItem("skipbpmselection");
-            //document.write("Your Last Selection: " + skipbpmselection);
-
             var calcBPMselection = sessionStorage.getItem('calcBPFixed');
             var skipBPMselection = sessionStorage.getItem('skipBPMFixed');
 
             document.write("Last calcBPM Selection: " + calcBPMselection + "<br>" + "Last skipBPM Selection: " + skipBPMselection);
-            // code below wont read skipBPM info and will always show calcBPMselection
-            //if (calcBPMselection != null){
-            //    document.write("Your Last Selection: " + calcBPMselection);
-            //}else if (skipBPMselection != null){
-            //    document.write("Your Last Selection: " + skipBPMselection);
-            //} else {
-            //    document.write("No input read :( ")
-            //}
-            
-
+        
             </script>
 
         </p>
