@@ -8,25 +8,20 @@
     <body>
       <h1>Step 4: Your Playlist</h1>
 
-      <p>Your Playlist is below!</p>
-    
-      <script src="./dist/bundle.js">
-        let hb = sessionStorage.getItem("calcBPMfixed");
-        let mood = sessionStorage.getItem("Mood");
-        let filteredData = [];
-        
-        // data.forEach((song) => {
-        //   if(Math.abs(song.tempo - hb) <= 20) {
-        //     filteredData.push(song);
-        //   }
-        // });
-        // if(filteredData[0] != null) {
-        //   alert (filteredData[0]);
-        // }
-        
+    <p>Your Playlist is below!</p>
+
+    <body>
+      <script>
+        function clearFunction() {
+                sessionStorage.clear();
+            }
       </script>
-      
+    <button id = "relbtn" type="button" onclick="document.location='index.html'; clearFunction()";>Reset
+    </button>
+    
+
     </body>
+
 
 
 

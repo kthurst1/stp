@@ -25,11 +25,19 @@
 
     <script>
       //put sessionStorage in here
+      var calcBPMselection = sessionStorage.getItem('calcBPFixed');
+      var skipBPMselection = sessionStorage.getItem('skipBPMFixed');
+      var moodSelection = sessionStorage.getItem('moodFixed');
+      document.write("Last calcBPM Selection: " + calcBPMselection + "<br>" + "Last skipBPM Selection: " + skipBPMselection + "<br>" + "Mood selection: " + moodSelection);
+
       //access firestore data and get a song
       //and then show it
       
 
     </script>
+
+    <br>
+    <br>
 
     <button type="button" onclick="document.location='Mood.html'">
       Back
