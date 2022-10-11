@@ -4,6 +4,8 @@
     <title>PlayList Gen</title>
 
     <link rel="stylesheet" type="text/css" href="main.css" media="”screen”" />
+
+  
     
   </head>
 
@@ -29,35 +31,26 @@
       var skipBPMselection = sessionStorage.getItem('skipBPMFixed');
       var moodSelection = sessionStorage.getItem('moodFixed');
       document.write("Last calcBPM Selection: " + calcBPMselection + "<br>" + "Last skipBPM Selection: " + skipBPMselection + "<br>" + "Mood selection: " + moodSelection);
-
+      
       //access firestore data and get a song
       //and then show it
+      
+      // const { songData } = require('./dist/bundle.js');
+
+
+      // console.log("Hello");
+      // data.forEach((song) => {
+      //   if(Math.abs(song.tempo - hb) <= 20) {
+      //     filteredData.push(song);
+      //   }
+      // });
+      
       
 
     </script>
 
-  <script src="./dist/bundle.js">
-    let hb = sessionStorage.getItem("calcBPMfixed");
-    let mood = sessionStorage.getItem("Mood");
-    let filteredData = [];
-    console.log("Hello");
-    data.forEach((song) => {
-      if(Math.abs(song.tempo - hb) <= 20) {
-        filteredData.push(song);
-      }
-    });
-    console.log(filteredData[0]);
+    <script type="module" src="./src/index.js"></script>
     
-    // data.forEach((song) => {
-    //   if(Math.abs(song.tempo - hb) <= 20) {
-    //     filteredData.push(song);
-    //   }
-    // });
-    // if(filteredData[0] != null) {
-    //   alert (filteredData[0]);
-    // }
-    
-  </script>
 
     <br>
     <br>
