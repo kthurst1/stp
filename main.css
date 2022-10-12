@@ -1,11 +1,19 @@
 h1 {
+    font-family:'Courier New', Courier, monospace;
     font-size: 60px;
     text-align: center;
-  }
+}
   
-  p,
-  li {
+p,
+li {
     font-size: 16px;
     line-height: 2;
     letter-spacing: 1px;
-  }
+}
+
+body {
+    background-color: rgba(176, 216, 231, 0.5);
+}
+
+
+  
